@@ -1,0 +1,17 @@
+version: '3.9'
+
+volumes:
+  redis_data: {}
+
+services:
+  redis:
+    image: redis/redis-stack:latest
+    container_name: redis_stack_docker
+    # restart: always
+    volumes:
+      - redis_data:/data
+    # env_file:
+    #   - ./.env
+    ports:
+      - 6379:6379
+      - 8001:8001
